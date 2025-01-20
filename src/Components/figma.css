@@ -1,0 +1,70 @@
+
+body {
+    font-size: 14px;
+    margin: 0; /* Reset default margin */
+    padding: 0; 
+    background-color: black;
+}
+
+
+.image-container {
+    width: 100%;
+    max-width: var(--max-container-width); /* Use variable for max width */
+    margin: 0 auto; /* Center the container */
+    overflow: hidden; /* Ensure the content stays within bounds */
+    border-radius: 8px; 
+    /* Rounded corners for aesthetics */
+    gap: 0px;
+    opacity: 0px;
+}
+
+.flex {
+    display: flex; /* Ensure flexbox is applied */
+    flex-wrap: wrap; /* Allow wrapping of images */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between images */
+    align-items: center; /* Center items vertically */
+}
+
+.responsive-image {
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+    width: 50%; /* Default width for all devices */
+    /* Set a max width for images */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+
+.responsive-image:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Mobile styles */
+@media (max-width: 400px) { /* Mobile devices */
+    .responsive-image {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+/* Styles for small tablets */
+@media (min-width: 401px) and (max-width: 639px) { /* Small tablets */
+    .responsive-image {
+        max-width: 45%; /* Two images per row */
+    }
+}
+
+/* Styles for medium devices (tablets) */
+@media (min-width: 640px) and (max-width: 668px) { /* Medium devices */
+    .responsive-image {
+        max-width: 30%; /* Three images per row */
+    }
+}
+
+/* Styles for large devices (desktops) */
+@media (min-width: 768px) { /* Large devices */
+    .responsive-image {
+        max-width: 17%;
+         /* Five images per row */
+    }
+}
+
